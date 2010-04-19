@@ -50,7 +50,7 @@ class SMSServer:
             self.reset()
         if self.mock_modem == False:
             try:
-                self.modem = pygsm.GsmModem(port=self.port, baudrate=self.baudrate)
+                self.modem = pygsm.GsmModem(port=self.port, baudrate=self.baudratem, mode=self.mode)
             except Exception, e:
                 try:
                     self.modem = pygsm.AutoGsmModem()
@@ -100,6 +100,7 @@ class SMSServer:
         self.baudrate =   self.config.getint    (self.modem_section, 'baudrate')
         self.sms_poll =   self.config.getint    (self.modem_section, 'sms_poll')
         self.mock_modem = self.config.getboolean(self.modem_section, 'mock')
+        self.mode = self.config.get(self.modem_section, 'mode')
 
         self.database_file = self.config.get    ('server', 'database_file')
         self.key = self.config.get              ('server', 'key')

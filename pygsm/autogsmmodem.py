@@ -56,6 +56,7 @@ class AutoGsmModem(GsmModem):
         if len(ports) > 0:
             kwargs['port'] = ports[0][0]
             kwargs['baudrate'] = ports[0][1]
+            kwargs['mode'] = "text"
             super(AutoGsmModem, self).__init__(*args, **kwargs)
         else:
             raise GsmModemNotFound()

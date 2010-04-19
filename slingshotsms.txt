@@ -7,18 +7,21 @@
 
 [macmodem]
 mock=no
+mode=text
 sms_poll=4
 port=
 # baudrate=115200
 
 [winmodem]
 mock=no
+mode=text
 sms_poll=4
 port=
 # baudrate=115200
 
 [modem]
 mock=no
+mode=text
 sms_poll=4
 port=
 # baudrate=115200
